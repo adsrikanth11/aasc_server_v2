@@ -9,6 +9,7 @@ app.use(cors()); // Enable CORS for all routes
 // Serve static files
 app.use('/public', express.static('public'));
 
+// Home Route
 app.get('/', (req, res) => {
    res.send('Welcome to AASC Server Application');
 });
