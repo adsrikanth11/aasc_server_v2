@@ -1,4 +1,4 @@
-CREATE TABLE `accademic_details` (
+CREATE TABLE `accademics` (
   `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `student_id` int NOT NULL,
   `accademic_year` year(4) NOT NULL,
@@ -21,9 +21,9 @@ CREATE TABLE `accademic_details` (
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   KEY `student_id` (`student_id`),
-  CONSTRAINT `accademic_details_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`)
+  CONSTRAINT `accademics_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
 
 
-INSERT INTO `accademic_details` (`id`, `student_id`, `accademic_year`, `course_applied`, `select_medium`, `II_language`, `ssc_pass_year`, `ssc_hallticket_no`, `school_name`, `board_name`, `pass_type`, `total_marks`, `grade_percentage`, `place_study`, `english_gpa`, `maths_gpa`, `science_gpa`, `social_gpa`, `created_at`, `updated_at`) 
+INSERT INTO `accademics` (`id`, `student_id`, `accademic_year`, `course_applied`, `select_medium`, `II_language`, `ssc_pass_year`, `ssc_hallticket_no`, `school_name`, `board_name`, `pass_type`, `total_marks`, `grade_percentage`, `place_study`, `english_gpa`, `maths_gpa`, `science_gpa`, `social_gpa`, `created_at`, `updated_at`) 
 VALUES (NULL, '1', '2020', 'MPC', 'English', 'Telugu', '2020', '123456789', 'Sri Vidya High Schoool', 'SSC', 'Regular', '550', '90', 'Adoni', '90', '95', '99', '96', current_timestamp(), current_timestamp());

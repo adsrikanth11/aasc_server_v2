@@ -14,6 +14,15 @@ app.get('/', (req, res) => {
    res.send('Welcome to AASC Server Application');
 });
 
+// Fontend API Routes
+app.use('/register', require('./routes/frontend/register.route'));
+
+app.use('/verify-email', require('./routes/frontend/verify_email.route'));
+
+app.use('/login', require('./routes/frontend/login.route'));
+
+app.use('/student', require('./routes/frontend/student.route'));
+
 // 404 handler
 app.use((req, res, next) => {
    const message = `404 - Not Found - ${req.originalUrl} - ${req.method} - ${req.ip}`;
